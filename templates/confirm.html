@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-180224082-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-180224082-1');
+    </script>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta property="og:url"           content=" http://127.0.0.1:5000/ " />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="Saturday Junk Hauling Marin" />
+    <meta property="og:description"   content="Get rid of that stuff" />
+    <meta property="og:image"         content= "static/images/{{ filename}}" />
+    <title>Document</title>
+
+    
+   
+</head>
+<body>
+    <style>
+        h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 48px;
+        }
+
+
+        figure {
+
+            width:75%;
+            height:50%;
+        }
+
+        .card-content {
+            max-width:50rem;
+            margin:auto;
+
+
+        }
+
+    </style>
+
+
+
+
+
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v7.0&appId=174990093843937&autoLogAppEvents=1"></script>
+
+
+
+    <div class ="columns is-centered">
+        
+        <section class="section">
+            <div class = "container">     
+                <h1 class="has-text-centered">Thanks!</h1>
+                
+                <div class="card is-centered">
+                            
+                    <div class="card-content">
+                        <div class="content">
+                            Hey {{ request.form.fname }},
+                            <p></p>
+                            {% if request.form.mycheckbox == '1' %}
+                            <p>
+                            Your marinhaulers.com quote request has been received. You'll find all the details about your quote request below, and we'll send you a written quote via email as soon as quotes from local haulers are provided.
+                            Questions? Suggestions? <a href = "mailto:quotes@marinhaulers.com">Shoot us an email. </a>  
+                            <br>
+                            <p></p>
+                            <strong>Pickup-time:</strong>
+                            <br>
+                            8am-12pm next Saturday   
+                                
+                            <br> Your Quote ID is {{ orderID }}
+
+                            </p>
+
+                            {% elif request.form.mycheckbox == '2' %}
+
+                            Your marinhaulers.com quote request has been received. You'll find all the details about your quote request below, and we'll send you a written quote via email as soon as quotes from local haulers are provided.
+                            Questions? Suggestions? <a href = "mailto:quotes@marinhaulers.com">Shoot us an email </a>  
+                            <br>
+                            <p></p>
+
+                            <strong>Pickup-time:</strong>
+                            <br>
+
+                            12pm-4pm next Saturday   
+                                
+                            <br> Your Quote ID is {{ orderID }}
+
+                            {% endif %}
+                        
+                        </div>
+
+
+
+
+                        <div class="card-image">
+                            <figure class="image is-4by3" style="margin:auto;">
+                                <img src = "static/images/{{ filename}}">
+                            </figure>
+                        </div>
+
+
+                        
+                        <div class="card-image">
+                            <figure class="image is-48x48" style="margin:auto;">
+                                <div class="fb-share-button" data-href="http://127.0.0.1:5000/" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F127.0.0.1%3A5000%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>                  
+                            </figure>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+</section>
+
+
+
+</body>
+</html>

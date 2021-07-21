@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+  <!-- Circles which indicates the steps of the form: -->
+
+      <head>
+
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-180224082-1"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-180224082-1');
+      </script>
+
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+      <title>Best prices in Marin. Better than 800 junk junk king!</title>
+      <meta name="description" content="Get connected to junk haulers serving Marin at the best price with no need for a login or researching reviews. We donate a portion of website earnings to Marin charities.">
+      <meta name=”robots” content="index, follow">
+      <meta charset="UTF-8">
+
+
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+      <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+      <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+      <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #ffffff;
+      }
+
+      #regForm {
+        background-color: #ffffff;
+        margin: 50px auto;
+        font-family: Raleway;
+        padding: 40px;
+        width: 70%;
+        min-width: 300px;
+      }
+
+      h1 {
+        text-align: center;
+        font-family:'Pacifico',cursive;
+      }
+
+      input {
+        padding: 10px;
+        width: 100%;
+        font-size: 17px;
+        font-family: Raleway;
+        border: 1px solid #aaaaaa;
+      }
+
+      /* Mark email input that gets an error on validation: */
+
+
+      input:invalid {
+        border: red solid 3px;
+      }
+
+      /* Mark input boxes that gets an error on validation: */
+
+      input.invalid {
+        background-color: #ffdddd;
+      }
+
+      /* Hide all steps by default: */
+      .tab {
+        display: none;
+      }
+
+      button {
+        background-color: #4CAF50;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 17px;
+        font-family: Raleway;
+        cursor: pointer;
+      }
+
+      button:hover {
+        opacity: 0.8;
+      }
+
+      #prevBtn {
+        background-color: #bbbbbb;
+      }
+
+      /* Make circles that indicate the steps of the form: */
+      .step {
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbbbbb;
+        border: none;
+        border-radius: 50%;
+        display: inline-block;
+        opacity: 0.5;
+      }
+
+      .step.active {
+        opacity: 1;
+      }
+
+      /* Mark the steps that are finished and valid: */
+      .step.finish {
+        background-color: #4CAF50;
+      }
+
+      h2 {
+        text-align:center;
+        font-family: 'Roboto';
+
+      }
+
+      .center{
+        display:block;
+        margin-left:auto;
+        margin-right:auto;
+        width:50%;
+        height:50%;
+      }
+
+      .invalid {
+        font-style: italic;
+      }
+
+
+      </style>
+
+      <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <h2><a class="nav-item nav-link active" href="{{ url_for('story') }} ">Our Story <span class="sr-only">(current)</span></a></h2>
+
+      </div>
+    </div>
+  </nav>
+
+<div>
+  <img src = "static/images/trash.svg" class="center">
+</div>
+
+<form id="regForm" method="POST" action=" {{ url_for('index') }}" enctype="multipart/form-data">
+
+  {{ form.csrf_token }}
+
+
+  <h1>Schedule Your Trash Pickup</h1>
+  <!-- One "tab" for each step in the form: -->
+  <div class="tab">Name:
+
+      {{ form.fname}}
+
+      <ul>
+        {% for error in form.fname.errors %}
+
+          <li style="color:red;"> {{ error }} </li>
+
+        {% endfor %}
+
+      </ul>
+
+  </div>
+
+
+  <div class="tab">
+
+     <p><span>{{ form.email.name}} {{ form.email}} </span> </p>
+
+
+    <p> {{ form.phone.name }} {{ form.phone }}  </p>
+  </div>
+
+<div class="tab"> Pick up for next Saturday only.
+ <h1>8am-12pm</h1> <input type="radio" value=1 name="mycheckbox"  checked="checked">
+ <h1>12pm-4pm</h1> <input type="radio" value=2 name="mycheckbox">
+
+</div>
+
+
+<div class="tab"> Pick your town in Marin closest to you
+  <h1>Fairfax</h1> <input type="radio" value=1 name="location" checked="checked">
+  <h1>San Anselmo</h1> <input type="radio" value=2 name="location">
+  <h1>Mill Valley</h1> <input type="radio" value=3 name="location">
+  <h1>Novato</h1> <input type="radio" value=4 name="location">
+  <h1>San Rafael</h1> <input type="radio" value=5 name="location">
+  <h1>West Marin</h1> <input type="radio" value=6 name="location">
+
+ </div>
+
+<div class="tab">
+
+    <h1>Upload a .JPG, .GIF or .PNG picture less than 8MB in size of the trash to pickup so we can prepare a quote</h1>
+
+    {{ form.image(onchange="validate(this)")}}
+
+    <ul>
+      {% for error in form.image.errors %}
+
+        <li style="color:red;"> {{ error }} </li>
+
+      {% endfor %}
+
+    </ul>
+
+    <ul>
+      <div id='lbError' class='invalid'></div>
+    </ul>
+
+    <br>
+
+</div>
+
+
+<div style="overflow:auto;">
+    <div style="float:right;">
+      <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+    </div>
+    <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+</div>
+
+
+  <!-- Circles which indicates the steps of the form: -->
+  <div style="text-align:center;margin-top:40px;">
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+
+  </div>
+</form>
+
+{% for error in form.email.errors %}
+     <span style="color: red;">[{{ error }}]</span>
+{% endfor %}
+
+
+<script>
+var currentTab = 0; // Current tab is set to be the first tab (0)
+showTab(currentTab); // Display the current tab
+
+function showTab(n) {
+  // This function will display the specified tab of the form...
+  var x = document.getElementsByClassName("tab");
+  x[n].style.display = "block";
+  //... and fix the Previous/Next buttons:
+  if (n == 0) {
+    document.getElementById("prevBtn").style.display = "none";
+  } else {
+    document.getElementById("prevBtn").style.display = "inline";
+  }
+  if (n == (x.length - 1)) {
+    document.getElementById("nextBtn").innerHTML = "Submit";
+
+
+  } else {
+    document.getElementById("nextBtn").innerHTML = "Next";
+  }
+  //... and run a function that will display the correct step indicator:
+  fixStepIndicator(n)
+}
+
+function nextPrev(n) {
+  // This function will figure out which tab to display
+  var x = document.getElementsByClassName("tab");
+  // Exit the function if any field in the current tab is invalid:
+  if (n == 1 && !validateForm()) return false;
+  // Hide the current tab:
+  x[currentTab].style.display = "none";
+  // Increase or decrease the current tab by 1:
+  currentTab = currentTab + n;
+  // if you have reached the end of the form...
+  if (currentTab >= x.length) {
+    // ... the form gets submitted:
+    document.getElementById("regForm").submit();
+    return false;
+  }
+  // Otherwise, display the correct tab:
+  showTab(currentTab);
+}
+
+function validateForm() {
+  // This function deals with validation of the form fields
+  var x, y, i, valid = true;
+  x = document.getElementsByClassName("tab");
+  y = x[currentTab].getElementsByTagName("input");
+  // A loop that checks every input field in the current tab:
+  for (i = 0; i < y.length; i++) {
+    // If a field is empty...
+    if (y[i].value == "") {
+      // add an "invalid" class to the field:
+      y[i].className += " invalid";
+      // and set the current valid status to false
+      valid = false;
+
+    }
+
+    document.getElementById('email').setAttribute("pattern","[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$");
+    document.getElementById('phone').setAttribute("pattern","[0-9]{10}");
+
+
+  }
+  // If the valid status is true, mark the step as finished and valid:
+  if (valid) {
+    document.getElementsByClassName("step")[currentTab].className += " finish";
+  }
+  return valid; // return the valid status
+}
+
+function fixStepIndicator(n) {
+  // This function removes the "active" class of all steps...
+  var i, x = document.getElementsByClassName("step");
+  for (i = 0; i < x.length; i++) {
+    x[i].className = x[i].className.replace(" active", "");
+  }
+  //... and adds the "active" class on the current step:
+  x[n].className += " active";
+}
+</script>
+
+
+<script>
+
+  function validate(el) {
+    var maxfilesize = 1024 * 1024 * 8,  // 4 Mb
+        filesize    = el.files[0].size,
+        warningel   = document.getElementById( 'lbError' );
+
+    if ( filesize > maxfilesize )
+    {
+      warningel.innerHTML = "File too large: " + filesize + ". Maximum size: " + maxfilesize;
+      return false;
+    }
+    else
+    {
+      warningel.innerHTML = '';
+      return true;
+    }
+  }
+
+  validate()
+  </script>
+
+
+    <h2>Want to earn cash hauling stuff? </h2>
+    <h2>Quieres ganar manejando basura?</h2>
+    <h2>Email haulers@marinhaulers.com</h2>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  </body>
+
+
+  </body>
+</html>

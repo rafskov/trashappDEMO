@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+  <!-- Circles which indicates the steps of the form: -->
+
+      <head>
+
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-180224082-1"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-180224082-1');
+      </script>
+
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+      <title>Easy junk and yard waste for Marin County</title>
+      <meta name="description" content="Get connected to junk haulers serving Marin at the best price with no need for a login or researching reviews. We donate a portion of website earnings to Marin charities.">
+      <meta name=”robots” content="index, follow">
+      <meta charset="UTF-8">
+
+
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+      <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+      <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+      <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #ffffff;
+      }
+
+      #regForm {
+        background-color: #ffffff;
+        margin: 50px auto;
+        font-family: Raleway;
+        padding: 40px;
+        width: 70%;
+        min-width: 300px;
+      }
+
+      h1 {
+        text-align: center;  
+        font-family:'Pacifico',cursive;
+      }
+
+      input {
+        padding: 10px;
+        width: 100%;
+        font-size: 17px;
+        font-family: Raleway;
+        border: 1px solid #aaaaaa;
+      }
+
+      /* Mark email input that gets an error on validation: */
+
+
+      input:invalid {
+        border: red solid 3px;
+      }
+
+      /* Mark input boxes that gets an error on validation: */
+
+      input.invalid {
+        background-color: #ffdddd;
+      }
+
+      /* Hide all steps by default: */
+      .tab {
+        display: none;
+      }
+
+      button {
+        background-color: #4CAF50;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 17px;
+        font-family: Raleway;
+        cursor: pointer;
+      }
+
+      button:hover {
+        opacity: 0.8;
+      }
+
+      #prevBtn {
+        background-color: #bbbbbb;
+      }
+
+      /* Make circles that indicate the steps of the form: */
+      .step {
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbbbbb;
+        border: none;  
+        border-radius: 50%;
+        display: inline-block;
+        opacity: 0.5;
+      }
+
+      .step.active {
+        opacity: 1;
+      }
+
+      /* Mark the steps that are finished and valid: */
+      .step.finish {
+        background-color: #4CAF50;
+      }
+
+      h2 {
+        text-align:center;
+        font-family: 'Roboto';
+
+      }
+
+      .center{
+        display:block;
+        margin-left:auto;
+        margin-right:auto;
+        width:50%;
+        height:50%;
+      }
+
+      .invalid {
+        font-style: italic; 
+      }
+
+  
+      </style>
+
+      <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <h2><a class="nav-item nav-link active" href="{{ url_for('story') }} ">Our Story <span class="sr-only">(current)</span></a></h2>
+       
+      </div>
+    </div>
+  </nav>
+
+<div>
+  <img src = "static/russian.jpg" width=100% height=100%>
+</div>
+
+<div class="container">
+    <div class="row">
+        <span>Photo by <a href="https://unsplash.com/@pixeldan?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Daniel Abadia</a> on <a href="https://unsplash.com/s/photos/san-francisco?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+    <div class ="row" padding-top = 1em>
+      <div class="col-sm">
+        
+          <h2>
+        <p>I’ll never forget the day we moved into our house in Marin. 
+            It was late December, it was raining, and our poor movers had got stuck on our steep street. The movers beat the street and managed to get the contents of our small 1 bedroom in the City into our new house. 
+        </p>
+        <p>
+            And then all the unpacking began. It only took me 2 trips down to the garbage bin to come to a new realization - the bin we had was tiny - a not so subtle reminder to be mindful of our consumption and recycling habits. 
+        </p>
+        <p>
+Apparently, our San Francisco building spoiled us with huge garbage cans which I can honestly say was the only amenity I enjoyed in the 5 years living under rent-control. The only big cans we had at our new home were for compost and recycling and we just didn’t have as much of that.
+        </p>
+        <p>
+Then we started ordering furniture and housewares - more boxes, more packaging material, and our poor little bin couldn’t keep up. We got a nastygram from the garbage guy - twice. At the rate we were accumulating trash, we’d be swimming in packaging material for months.
+        </p>
+        <p>
+My wife went on some website and the next day the 20 or so hefty bags we had queued up in our driveway waiting for an enterprising raccoon to shred to pieces were gone. The service was convenient, required no trips to the ATM for cash, no need for us to greet the hauler and the service just worked. The trash was gone and my driveway no longer looked like a junkyard.
+        </p>
+        <p>
+I didn’t like how the price changed more than once in 24 hours. I wasn’t sure I was getting the best price. That’s when I got the idea - what if I was connected to dozens of haulers and the platform just picked the cheapest one? No need to read through reviews. No need for a password or to pick a time. No need to worry about changing prices on some website. Click, and gone!
+        
+</p>
+<p>
+I built marinhaulers.com to do just that - get rid of the junk at the best price so you can focus on your weekend instead of fretting about endless garbage bags.  I hope you’ll enjoy the service and enjoy supporting local haulers and local non-profits by parting ways with whatever you need to part ways with!
+        </p>
+ 
+    </h2>
+</div>
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  
+  </body>
+
+
+  </body>
+</html>

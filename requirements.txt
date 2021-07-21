@@ -1,0 +1,14 @@
+click==7.1.1
+Flask==1.1.1
+Flask-Uploads==0.2.1
+Flask-WTF==0.14.3
+importlib-metadata==1.6.0
+itsdangerous==1.1.0
+Jinja2==2.11.1
+keyring==21.2.0
+MarkupSafe==1.1.1
+pywin32-ctypes==0.2.0
+Werkzeug==0.16.0
+WTForms==2.2.1
+yagmail==0.11.224
+zipp==3.1.0
