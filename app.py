@@ -39,7 +39,7 @@ USERNAME = "admin"
 PASSWORD = "94YliJ$XhPui"
 
 #'SHOW databases, USE flasksurfiary$marinhaulers'
-SQLALCHEMY_DATABASE_URI = 'mysql://flasksurfdiary:324H^EkFJc&1@flasksurfdiary.mysql.pythonanywhere-services.com/flasksurfdiary$marinhaulers'
+SQLALCHEMY_DATABASE_URI = 'mysql://flasksurfdiary:testcred@flasksurfdiary.mysql.pythonanywhere-services.com/flasksurfdiary$marinhaulers'
 
 
 SQLALCHEMY_TRACk_MODIFICATIONS = False
@@ -56,7 +56,7 @@ from models import Post
 #project needs to be removed in PAW
 
 account_sid = 'AC21008da45eda60eca4b12c0dc32f77c5'
-auth_token='57ca3d529f95ea6ae84ab1df65b5b5a6'
+auth_token='testcred'
 
 
 images = UploadSet('images',IMAGES)

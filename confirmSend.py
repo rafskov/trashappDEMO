@@ -5,7 +5,7 @@ from sqlalchemy import create_engine,update,MetaData,Table,Column,Integer,String
 
 
 
-engine = create_engine("mysql://flasksurfdiary:324H^EkFJc&1@flasksurfdiary.mysql.pythonanywhere-services.com/flasksurfdiary$marinhaulers",echo = True)
+engine = create_engine("mysql://flasksurfdiary:testcred@flasksurfdiary.mysql.pythonanywhere-services.com/flasksurfdiary$marinhaulers",echo = True)
 conn = engine.connect()
 
 
@@ -17,7 +17,7 @@ def sendConfirm(email,fname,orderID,location,slot,phone):
 
     #attachments = 'C:\\Users\\rskov\\Projects\\trashapp\\project\\static\\images\\'+filename
     #attachments = '/home/flasksurfdiary/trashapp/static/images/'+filename
-    yag = yagmail.SMTP('quote@marinhaulers.com','oymvpdxxeiigeboy')
+    yag = yagmail.SMTP('quote@marinhaulers.com','testcred')
 
     yag.send(
         to=receiver,
