@@ -56,7 +56,7 @@ from models import Post
 #project needs to be removed in PAW
 
 account_sid = 'AC21008da45eda60eca4b12c0dc32f77c5'
-auth_token='testcred'
+auth_token='testcredvegas'
 
 
 images = UploadSet('images',IMAGES)
