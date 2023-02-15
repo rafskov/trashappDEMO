@@ -8,7 +8,7 @@ Jinja2==2.11.3
 keyring==21.2.0
 MarkupSafe==1.1.1
 pywin32-ctypes==0.2.0
-Werkzeug==0.16.0
+Werkzeug==2.2.3
 WTForms==2.2.1
 yagmail==0.11.224
 zipp==3.1.0
